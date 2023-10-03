@@ -1,0 +1,57 @@
+{
+  "version": "1.1.0",
+  "applicationId": "9660f980-d2fe-416e-be7a-3b4fdd826d9b",
+  "host": "http://host.docker.internal:80",
+  "sources": [
+    {
+      "name": "crAPI",
+      "openApi": {
+        "sourcePath": "/noname/crapi-spec.json"
+      }
+    }
+  ],
+  "auths": [
+    {
+      "name": "JohnSmith",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{johnSmith}}",
+          "key": "Authorization"
+        }
+      ]
+    },
+    {
+      "name": "JaneDoe",
+      "role": "reader / writer",
+      "mappings": [
+        {
+          "type": "header",
+          "value": "Bearer {{janeDoe}}",
+          "key": "Authorization"
+        }
+      ]
+    }
+  ],
+  "app": {
+    "secrets": [
+      {
+        "name": "johnSmith",
+        "type": "postman",
+        "data": {
+          "collection": "{\"info\":{\"_postman_id\":\"ffd754d0-b698-4f90-99f3-e68542bdcd25\",\"name\":\"JohnSmith Login\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20999705\"},\"item\":[{\"name\":\"Login\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n    \\\"email\\\": \\\"john.smith@fake.com\\\",\\n    \\\"password\\\": \\\"crapiNoname!\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"http://host.docker.internal:80/identity/api/auth/login\",\"protocol\":\"http\",\"host\":[\"host\",\"docker\",\"internal\"],\"path\":[\"identity\",\"api\",\"auth\",\"login\"]}},\"response\":[]}]}",
+          "sourceBody": "$.token"
+        }
+      },
+      {
+        "name": "janeDoe",
+        "type": "postman",
+        "data": {
+          "collection": "{\"info\":{\"_postman_id\":\"6e3b00fc-5eb8-4ce9-a0ee-46f70dc9cdcf\",\"name\":\"JaneDoe Login\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20999705\"},\"item\":[{\"name\":\"Login\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n    \\\"email\\\": \\\"jane.doe@fake.com\\\",\\n    \\\"password\\\": \\\"crapiNoname!\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"http://host.docker.internal:80/identity/api/auth/login\",\"protocol\":\"http\",\"host\":[\"host\",\"docker\",\"internal\"],\"path\":[\"identity\",\"api\",\"auth\",\"login\"]}},\"response\":[]}]}",
+          "sourceBody": "$.token"
+        }
+      }
+    ]
+  }
+}

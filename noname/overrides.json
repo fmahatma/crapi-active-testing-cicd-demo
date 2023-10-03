@@ -1,0 +1,34 @@
+[
+  {
+    "api": {
+      "type": "rest",
+      "path": "/identity/api/v2/vehicle/{vehicleId}/location",
+      "method": "GET",
+      "location": {
+        "type": "request",
+        "in": {
+          "type": "path",
+          "name": "vehicleId"
+        }
+      }
+    },
+    "source": "user",
+    "resolver": {
+      "type": "dependency",
+      "dependency": {
+        "type": "rest",
+        "path": "/identity/api/v2/vehicle/vehicles",
+        "method": "GET",
+        "location": {
+          "type": "response",
+          "statusCode": "200",
+          "in": {
+            "type": "body",
+            "contentType": "application/json",
+            "jsonPath": "0.uuid"
+          }
+        }
+      }
+    }
+  }
+]

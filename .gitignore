@@ -1,0 +1,5 @@
+deploy/vagrant/*.log
+deploy/vagrant/.vagrant
+.secrets
+.dccache
+.DS_Store
