@@ -1,34 +1,35 @@
 {
   "version": "1.1.0",
-  "applicationId": "9660f980-d2fe-416e-be7a-3b4fdd826d9b",
+  "applicationId": "7296fd8d-4315-48a5-8fe4-a351f4f50fd8",
   "host": "http://host.docker.internal:80",
   "sources": [
     {
-      "name": "crAPI",
+      "name": "OpenAPI Spec",
       "openApi": {
         "sourcePath": "/noname/crapi-spec.json"
-      }
+      },
+      "auth_mappings": []
     }
   ],
   "auths": [
     {
-      "name": "JohnSmith",
+      "name": "Jane Doe",
       "role": "reader / writer",
       "mappings": [
         {
           "type": "header",
-          "value": "Bearer {{johnSmith}}",
+          "value": "Bearer {{Jane Doe}}",
           "key": "Authorization"
         }
       ]
     },
     {
-      "name": "JaneDoe",
+      "name": "John Smith",
       "role": "reader / writer",
       "mappings": [
         {
           "type": "header",
-          "value": "Bearer {{janeDoe}}",
+          "value": "Bearer {{John Smith}}",
           "key": "Authorization"
         }
       ]
@@ -37,18 +38,18 @@
   "app": {
     "secrets": [
       {
-        "name": "johnSmith",
+        "name": "Jane Doe",
         "type": "postman",
         "data": {
-          "collection": "{\"info\":{\"_postman_id\":\"ffd754d0-b698-4f90-99f3-e68542bdcd25\",\"name\":\"JohnSmith Login\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20999705\"},\"item\":[{\"name\":\"Login\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n    \\\"email\\\": \\\"john.smith@fake.com\\\",\\n    \\\"password\\\": \\\"crapiNoname!\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"http://host.docker.internal:80/identity/api/auth/login\",\"protocol\":\"http\",\"host\":[\"host\",\"docker\",\"internal\"],\"path\":[\"identity\",\"api\",\"auth\",\"login\"]}},\"response\":[]}]}",
+          "collection": "{\"info\":{\"_postman_id\":\"6e3b00fc-5eb8-4ce9-a0ee-46f70dc9cdcf\",\"name\":\"JaneDoe Login\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20999705\"},\"item\":[{\"name\":\"Login\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n    \\\"email\\\": \\\"jane.doe@fake.com\\\",\\n    \\\"password\\\": \\\"N0name!2023\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"https://argentina-latam-crapi.nnsworkshop.com/identity/api/auth/login\",\"protocol\":\"https\",\"host\":[\"argentina-latam-crapi\",\"nnsworkshop\",\"com\"],\"path\":[\"identity\",\"api\",\"auth\",\"login\"]}},\"response\":[]}]}",
           "sourceBody": "$.token"
         }
       },
       {
-        "name": "janeDoe",
+        "name": "John Smith",
         "type": "postman",
         "data": {
-          "collection": "{\"info\":{\"_postman_id\":\"6e3b00fc-5eb8-4ce9-a0ee-46f70dc9cdcf\",\"name\":\"JaneDoe Login\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20999705\"},\"item\":[{\"name\":\"Login\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n    \\\"email\\\": \\\"jane.doe@fake.com\\\",\\n    \\\"password\\\": \\\"crapiNoname!\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"http://host.docker.internal:80/identity/api/auth/login\",\"protocol\":\"http\",\"host\":[\"host\",\"docker\",\"internal\"],\"path\":[\"identity\",\"api\",\"auth\",\"login\"]}},\"response\":[]}]}",
+          "collection": "{\"info\":{\"_postman_id\":\"ffd754d0-b698-4f90-99f3-e68542bdcd25\",\"name\":\"JohnSmith Login\",\"schema\":\"https://schema.getpostman.com/json/collection/v2.1.0/collection.json\",\"_exporter_id\":\"20999705\"},\"item\":[{\"name\":\"Login\",\"request\":{\"method\":\"POST\",\"header\":[],\"body\":{\"mode\":\"raw\",\"raw\":\"{\\n    \\\"email\\\": \\\"john.smith@fake.com\\\",\\n    \\\"password\\\": \\\"N0name!2023\\\"\\n}\",\"options\":{\"raw\":{\"language\":\"json\"}}},\"url\":{\"raw\":\"https://argentina-latam-crapi.nnsworkshop.com/identity/api/auth/login\",\"protocol\":\"https\",\"host\":[\"argentina-latam-crapi\",\"nnsworkshop\",\"com\"],\"path\":[\"identity\",\"api\",\"auth\",\"login\"]}},\"response\":[]}]}",
           "sourceBody": "$.token"
         }
       }
