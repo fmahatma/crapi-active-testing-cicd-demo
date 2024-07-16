@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 env:
-  ACTIVE_API_URL: https://customer.nonamesec.com/active
-  ACTIVE_APP_ID: 9660f980-d2fe-416e-be7a-3b4fdd826d9b
-  ACTIVE_REGISTRY_URL: us-central1-docker.pkg.dev/noname-artifacts/nns-docker
+  ACTIVE_API_URL: ${{secrets.ACTIVE_API_URL}}
+  ACTIVE_APP_ID: ${{secrets.ACTIVE_APP_ID}}
+  ACTIVE_REGISTRY_URL: ${{secrets.ACTIVE_REGISTRY_URL}}
   TEST_GROUP_ID: 3f2e79c7-f237-417f-94a0-e50f07713d3d
 
 jobs:
