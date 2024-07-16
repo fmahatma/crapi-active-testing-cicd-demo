@@ -47,7 +47,6 @@ jobs:
           docker run
           --add-host=host.docker.internal:host-gateway
           -e ACTIVE_CONFIG_FILE_PATH=/noname/active-config.json
-          #-e ACTIVE_OVERRIDES_FILE_PATH=/noname/overrides.json
           -v $(pwd)/noname:/noname
           ${{env.ACTIVE_REGISTRY_URL}}/active-cli:$(curl -k ${{env.ACTIVE_API_URL}}/backend/version) scan
           --api-url=${{ env.ACTIVE_API_URL }}
