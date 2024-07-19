@@ -1,7 +1,7 @@
 {
   "version": "1.1.0",
   "applicationId": "7296fd8d-4315-48a5-8fe4-a351f4f50fd8",
-  "host": "http://host.docker.internal:80",
+  "host": "http://host.docker.internal:82",
   "sources": [
     {
       "name": "OpenAPI Spec",
