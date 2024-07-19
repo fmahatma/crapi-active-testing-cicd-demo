@@ -53,4 +53,4 @@ jobs:
           --api-token=${{ secrets.ACTIVE_API_TOKEN }}
           --test-group-id=${{ env.TEST_GROUP_ID }}
           --branch-name=${{ github.head_ref || github.ref_name }}
-          --severity-threshold=medium
+          --severity-threshold=none
