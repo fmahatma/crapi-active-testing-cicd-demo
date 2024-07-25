@@ -35,8 +35,8 @@ jobs:
       - name: Docker login for Noname CLI
         uses: docker/login-action@v1
         with:
-          registry: ${{ env.ACTIVE_REGISTRY_URL }}
-          username: ${{ env.ACTIVE_REGISTRY_USER }}
+          registry: ${{ vars.ACTIVE_REGISTRY_URL }}
+          username: ${{ vars.ACTIVE_REGISTRY_USER }}
           password: ${{ secrets.ACTIVE_REGISTRY_PASSWORD }}
 
       - name: Active Testing Scan
@@ -45,8 +45,8 @@ jobs:
           --add-host=host.docker.internal:host-gateway
           -e ACTIVE_CONFIG_FILE_PATH=/noname/active-config.json
           -v $(pwd)/noname:/noname
-          ${{env.ACTIVE_REGISTRY_URL}}/active-cli:$(curl -k ${{env.ACTIVE_API_URL}}/backend/version) scan
-          --api-url=${{ env.ACTIVE_API_URL }}
+          ${{vars.ACTIVE_REGISTRY_URL}}/active-cli:$(curl -k ${{vars.ACTIVE_API_URL}}/backend/version) scan
+          --api-url=${{ vars.ACTIVE_API_URL }}
           --api-token=${{ secrets.ACTIVE_API_TOKEN }}
           --test-group-id=${{ env.TEST_GROUP_ID }}
           --branch-name=${{ github.head_ref || github.ref_name }}
