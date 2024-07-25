@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
 
 env:
-  ACTIVE_API_URL: ${{secrets.ACTIVE_API_URL}}
-  ACTIVE_APP_ID: ${{secrets.ACTIVE_APP_ID}}
-  ACTIVE_REGISTRY_URL: ${{secrets.ACTIVE_REGISTRY_URL}}
+  ACTIVE_API_URL: ${{env.ACTIVE_API_URL}}
+  ACTIVE_APP_ID: ${{env.ACTIVE_APP_ID}}
+  ACTIVE_REGISTRY_URL: ${{env.ACTIVE_REGISTRY_URL}}
   TEST_GROUP_ID: 892b51de-67cf-4328-beea-3ade61bcdeb2
 
 jobs:
@@ -39,7 +39,7 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ${{ env.ACTIVE_REGISTRY_URL }}
-          username: ${{ secrets.ACTIVE_REGISTRY_USER }}
+          username: ${{ env.ACTIVE_REGISTRY_USER }}
           password: ${{ secrets.ACTIVE_REGISTRY_PASSWORD }}
 
       - name: Active Testing Scan
