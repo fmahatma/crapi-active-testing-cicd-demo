@@ -7,7 +7,7 @@ env:
   ACTIVE_API_URL: ${{secrets.ACTIVE_API_URL}}
   ACTIVE_APP_ID: ${{secrets.ACTIVE_APP_ID}}
   ACTIVE_REGISTRY_URL: ${{secrets.ACTIVE_REGISTRY_URL}}
-  TEST_GROUP_ID: 3f2e79c7-f237-417f-94a0-e50f07713d3d
+  TEST_GROUP_ID: 892b51de-67cf-4328-beea-3ade61bcdeb2
 
 jobs:
   build-and-test-images:
