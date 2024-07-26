@@ -44,10 +44,11 @@ jobs:
           docker run
           --add-host=host.docker.internal:host-gateway
           -e ACTIVE_CONFIG_FILE_PATH=/noname/active-config.json
+          -e ACTIVE_OVERRIDES_FILE_PATH=/noname/overrides.json
           -v $(pwd)/noname:/noname
           ${{vars.ACTIVE_REGISTRY_URL}}/active-cli:$(curl -k ${{vars.ACTIVE_API_URL}}/backend/version) scan
           --api-url=${{ vars.ACTIVE_API_URL }}
           --api-token=${{ secrets.ACTIVE_API_TOKEN }}
           --test-group-id=${{ env.TEST_GROUP_ID }}
           --branch-name=${{ github.head_ref || github.ref_name }}
-          --severity-threshold=none
+          --severity-threshold=high
